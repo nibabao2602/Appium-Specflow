@@ -1,0 +1,108 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/nhict/Desktop/Projects/Appium-Specflow/AppiumTest/AppiumTest.csproj": {}
+  },
+  "projects": {
+    "/Users/nhict/Desktop/Projects/Appium-Specflow/AppiumTest/AppiumTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/nhict/Desktop/Projects/Appium-Specflow/AppiumTest/AppiumTest.csproj",
+        "projectName": "AppiumTest",
+        "projectPath": "/Users/nhict/Desktop/Projects/Appium-Specflow/AppiumTest/AppiumTest.csproj",
+        "packagesPath": "/Users/nhict/.nuget/packages/",
+        "outputPath": "/Users/nhict/Desktop/Projects/Appium-Specflow/AppiumTest/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/nhict/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Appium.WebDriver": {
+              "target": "Package",
+              "version": "[5.0.0-beta03, )"
+            },
+            "DotNetSeleniumExtras.PageObjects": {
+              "target": "Package",
+              "version": "[3.11.0, )"
+            },
+            "DotNetSeleniumExtras.PageObjects.Core": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            },
+            "DotNetSeleniumExtras.WaitHelpers": {
+              "target": "Package",
+              "version": "[3.11.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.5.0, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.4.2, )"
+            },
+            "Selenium.Support": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            },
+            "Selenium.WebDriver": {
+              "target": "Package",
+              "version": "[4.8.2, )"
+            },
+            "SpecFlow": {
+              "target": "Package",
+              "version": "[3.9.74, )"
+            },
+            "SpecFlow.Assist.Dynamic": {
+              "target": "Package",
+              "version": "[1.4.2, )"
+            },
+            "SpecFlow.NUnit": {
+              "target": "Package",
+              "version": "[3.9.74, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.414/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
