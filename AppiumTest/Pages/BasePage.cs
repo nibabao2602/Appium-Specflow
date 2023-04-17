@@ -1,8 +1,6 @@
 using System.IO;
 using System.Text.Json;
 using AppiumTest.Utils;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Appium;
 using SeleniumExtras.PageObjects;
 using TechTalk.SpecFlow;
 
@@ -21,7 +19,7 @@ namespace AppiumTest.Pages
             wait = new WaitHelpers();
             PageFactory.InitElements(AppiumDriverHelper.GetDriver(), this);
             
-            JsonDocument jsonDocument = JsonDocument.Parse(File.ReadAllText("/Users/nhict/Projects/AppiumTest/AppiumTest/config.json"));
+            JsonDocument jsonDocument = JsonDocument.Parse(File.ReadAllText("/Users/nhict/Desktop/Projects/Appium-Specflow/AppiumTest/config.json"));
             isIOS = jsonDocument.RootElement.GetProperty("isIOSDevice").GetBoolean(); ;
         }
     }

@@ -24,7 +24,7 @@ namespace AppiumTest
 
         public static AppiumDriver GetDriver()
         {
-            JsonDocument jsonDocument = JsonDocument.Parse(File.ReadAllText("/Users/nhict/Projects/AppiumTest/AppiumTest/config.json"));
+            JsonDocument jsonDocument = JsonDocument.Parse(File.ReadAllText("/Users/nhict/Desktop/Projects/Appium-Specflow/AppiumTest/config.json"));
             JsonElement rootElement = jsonDocument.RootElement;
             var isIOS = rootElement.GetProperty("isIOSDevice").GetBoolean();
 
@@ -49,7 +49,6 @@ namespace AppiumTest
         public static AppiumLocalService InitAppiumServer()
         {
             Dictionary<String, String> environment = new Dictionary<String, String>();
-            //KeyValuePair<string, string> myKeyValuePair = new KeyValuePair<string, string>("--simulator-name", "iPhone");
             environment.Add("CARTHAGE_PATH", "/opt/homebrew/bin");
             environment.Add("ANDROID_HOME", "/Users/nhict/Library/Android/sdk");
             environment.Add("ANDROID_SDK_ROOT", "/Users/nhict/Library/Android/sdk");
@@ -64,7 +63,7 @@ namespace AppiumTest
         }
         public static void InitAndroidEmulator()
         {
-            Process.Start("/Users/nhict/Library/Android/sdk/emulator/emulator", "-avd Pixel_2_API_30");
+            Process.Start("/Users/nhict/Library/Android/sdk/emulator/emulator", "-avd 8_Fold-out_API_31 -port 5558");
             Thread.Sleep(10000);
         }
         public static void CloseAppiumServer()
@@ -73,7 +72,7 @@ namespace AppiumTest
         }
         public static void CloseEmulator()
         {
-            JsonDocument jsonDocument = JsonDocument.Parse(File.ReadAllText("/Users/nhict/Projects/AppiumTest/AppiumTest/config.json"));
+            JsonDocument jsonDocument = JsonDocument.Parse(File.ReadAllText("/Users/nhict/Desktop/Projects/Appium-Specflow/AppiumTest/config.json"));
             JsonElement rootElement = jsonDocument.RootElement;
             var isIOS = rootElement.GetProperty("isIOSDevice").GetBoolean();
             if (isIOS)
@@ -82,21 +81,21 @@ namespace AppiumTest
             }
             else
             {
-                Process.Start("/Users/nhict/Library/Android/sdk/platform-tools/adb", "-s emulator-5554 emu kill");
+                Process.Start("/Users/nhict/Library/Android/sdk/platform-tools/adb", "-s emulator-5558 emu kill");
             }
         }
 
         private static AndroidDriver InitializeAppium()
         {
             var driverOptions = new AppiumOptions();
-            driverOptions.DeviceName = "Pixel_2_API_30";
+            driverOptions.DeviceName = "8_Fold-out_API_31";
             driverOptions.PlatformName = "Android";
-            driverOptions.PlatformVersion = "11";
+            driverOptions.PlatformVersion = "12";
 
-            driverOptions.App = "/Users/nhict/Projects/AppiumTest/AppiumTest/Asset/VNW.apk";
+            driverOptions.App = "/Users/nhict/Desktop/Projects/Appium-Specflow/AppiumTest/Asset/VNW.apk";
             driverOptions.AutomationName = "UiAutomator2";
             driverOptions.AddAdditionalAppiumOption("autoDismissAlerts", "true");
-            driverOptions.AddAdditionalAppiumOption("udid", "emulator-5554");
+            driverOptions.AddAdditionalAppiumOption("udid", "emulator-5558");
             driverOptions.AddAdditionalAppiumOption("autoGrantPermissions", "true");
 
             return new AndroidDriver(AppiumService, driverOptions);
@@ -108,7 +107,7 @@ namespace AppiumTest
             driverOptions.DeviceName = "iPhone";
             driverOptions.PlatformName = "ios";
             driverOptions.PlatformVersion = "16.4";
-            driverOptions.App = "/Users/nhict/Projects/AppiumTest/AppiumTest/Asset/VNW.app";
+            driverOptions.App = "/Users/nhict/Desktop/Projects/Appium-Specflow/AppiumTest/Asset/VNW.app";
             driverOptions.AutomationName = "XCUITest";
             //driverOptions.AddAdditionalAppiumOption("resetOnSessionStartOnly", true);
             //driverOptions.AddAdditionalAppiumOption("enforceFreshSimulatorCreation", true);
