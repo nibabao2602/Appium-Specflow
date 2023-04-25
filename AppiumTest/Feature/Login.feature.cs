@@ -103,6 +103,33 @@ namespace AppiumTest.Feature
 #line 8
               testRunner.And("Click on Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
+#line 9
+              testRunner.And("Wait 10000", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 10
+              testRunner.And("Dismiss Notifications After Login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 12
+             testRunner.Then("Go to First Job", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 13
+              testRunner.And("Click on Apply Now", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 14
+              testRunner.And("Upload file", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 15
+             testRunner.When("Verify file is attached successfully", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 16
+             testRunner.Then("Enter job title \"abcfđsal\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 17
+              testRunner.And("Click on confirm apply", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 18
+              testRunner.And("Verify successful apply", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
             }
             this.ScenarioCleanup();
         }

@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using AppiumTest.Utils;
 using AppiumTest.Wrapper;
 using OpenQA.Selenium;
@@ -24,6 +27,10 @@ namespace AppiumTest.Pages
         protected IWebElement signInBtn_IOS;
         [FindsBy(How = How.Custom, Using = @"new UiSelector().resourceIdMatches("".*btnSubmit"")", CustomFinderType = typeof(ByAndroidUIAutomator))]
         protected IWebElement skipBtn;
+        [FindsBy(How = How.Custom, Using = @"new UiSelector().resourceIdMatches("".*textViewJobTitle"")", CustomFinderType = typeof(ScrollableUiSelector))]
+        protected IList<IWebElement> textViewJobTitle;
+        [FindsBy(How = How.Custom, Using = @"new UiSelector().resourceIdMatches("".*textViewIndustry"")", CustomFinderType = typeof(ScrollableUiSelector))]
+        protected IWebElement textViewIndustry;
 
         // [FindsBy(How = How.Custom, Using = "btnSubmit", CustomFinderType = typeof(ById))]
         // protected IWebElement skipBtn;
@@ -54,6 +61,7 @@ namespace AppiumTest.Pages
         }
         public HomePage SkipNotiAfterLogin()
         {
+            try {
             if (isIOS) {
                 wait.WaitForElementClickable(skipBtn_IOS);
                 skipBtn_IOS.Click();
@@ -63,12 +71,21 @@ namespace AppiumTest.Pages
                 wait.WaitForElementClickable(skipBtn);
                 skipBtn.Click();
             }
+
+            } catch {
+                
+            }
             return this;
         }
         public bool IsPageDisplay()
         {
             if (isIOS) return presonalTab_IOS != null ? presonalTab_IOS.Displayed : false;
             return presonalTab != null ? presonalTab.Displayed : false;
+        }
+        public void ClickOnFirstJob()
+        {
+            var a = textViewJobTitle.ToList();
+            textViewJobTitle.ElementAt(0).Click();
         }
     }
 }

@@ -63,7 +63,7 @@ namespace AppiumTest
         }
         public static void InitAndroidEmulator()
         {
-            Process.Start("/Users/nhict/Library/Android/sdk/emulator/emulator", "-avd 8_Fold-out_API_31 -port 5558");
+            Process.Start("/Users/nhict/Library/Android/sdk/emulator/emulator", "-avd Pixel_4_API_30 -port 5558");
             Thread.Sleep(10000);
         }
         public static void CloseAppiumServer()
@@ -88,11 +88,11 @@ namespace AppiumTest
         private static AndroidDriver InitializeAppium()
         {
             var driverOptions = new AppiumOptions();
-            driverOptions.DeviceName = "8_Fold-out_API_31";
+            driverOptions.DeviceName = "Pixel_4_API_30";
             driverOptions.PlatformName = "Android";
             driverOptions.PlatformVersion = "12";
 
-            driverOptions.App = "/Users/nhict/Desktop/Projects/Appium-Specflow/AppiumTest/Asset/VNW.apk";
+            driverOptions.App = "/Users/nhict/Desktop/Projects/Appium-Specflow/AppiumTest/Asset/app.apk";
             driverOptions.AutomationName = "UiAutomator2";
             driverOptions.AddAdditionalAppiumOption("autoDismissAlerts", "true");
             driverOptions.AddAdditionalAppiumOption("udid", "emulator-5558");
